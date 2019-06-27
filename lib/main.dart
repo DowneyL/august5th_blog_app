@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'layout/home.dart';
+import 'package:august5th_blog/component/colors.dart';
 
 void main() => runApp(MyApp());
 
