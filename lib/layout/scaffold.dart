@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:august5th_blog/component/colors.dart';
 import 'package:august5th_blog/layout/drawer.dart';
+import 'package:august5th_blog/layout/popular.dart';
 
 class AugustScaffold extends StatefulWidget {
   @override
@@ -81,13 +82,17 @@ class _AugustScaffoldState extends State<AugustScaffold>
       drawer: HomeDrawer(),
       body: TabBarView(
         controller: _tabController,
-        children: tabs.map((e) {
-          //创建3个Tab页
-          return Container(
-            alignment: Alignment.center,
-            child: Text(e, textScaleFactor: 2),
-          );
-        }).toList(),
+        children: <Widget>[
+          PopularPage(),
+          Container(
+            color: Colors.yellow,
+            child: Text("Recently"),
+          ),
+          Container(
+            color: Colors.green,
+            child: Text("Suggest"),
+          )
+        ],
       ),
     );
   }
